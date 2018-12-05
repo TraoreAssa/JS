@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Jeu de devinette</title>
+</head>
+
+<body>
+    <h1>Nombre magique :</h1>
+    <ol>
+        <li>Message de bienvenue sur la console</li>
+        <li>Générer un nombre aléatoire entre 1 et 100</li>
+        <li>Faire apparaitre une boite de saisie</li>
+        <li>Entrée de l'utilisateur d'un essai</li>
+        <li>Si le nombre est trouvé, le jeu s'arrête
+        <br/>Sinon le programme indique si le nombre magique est plus petit ou plus grand que la saisie
+        <br/>Si l'entrée n'est pas un nombre, un message d'erreur s'affiche</li>
+        <li>L'utilisateur à 6 essais, puis le jeu s'arrête et donne la solution.</li>
+    </ol>
+
+    <script>
+        console.log("Bienvenue dans ce jeu de devinette !");
+        // console.log est pour mettre un message dans la console 
+        
+        // Cette ligne génére aléatoirement un nombre entre 1 et 100
+        var solution = Math.floor(Math.random() * 100) + 1;
+        
+        
+        // Test pour mieux verifier le programme
+        console.log("(La solution est " + solution + ")");
+        
+        for (var i = 1; i <= 6; i++){
+        nbJoueur = parseInt(prompt("Le but du jeu est simple. Je pense à un nombre entre 0 et 100. A ton avis, quel est ce nombre? Notes le dans la zone ci-dessous, tu as 6 essaies."));         
+
+            if(!isNaN(nbJoueur)){
+                if(solution === nbJoueur){
+                    alert("Bravo vous avez trouvé !");
+                    i = 6;
+                }else{
+                    if (solution < nbJoueur){
+                        alert("Le nombre est plus petit, essai " + i + " sur 6");
+                    }else{
+                        alert("Le nombre est plus grand, essai " + i + " sur 6");
+                    }
+                }
+            } else{
+                alert("Vous n'avez pas saisi un nombre !");
+            }
+        
+        }
+        alert(" La bonne réponse est " + solution + " .");
+
+
+
+
+       /* var i = Number(prompt("Entrez un nombre :"));
+        for(nombre != solution){
+        
+            if (nombre > solution){
+            alert(nombre + " est trop grand");
+            }
+        
+            else if (nombre < solution){
+            alert(nombre + " est trop petit");
+            }
+            }
+        
+        while (nombre == solution) {
+            alert("Bravo ! La solution était " + solution);
+            }*/
+        </script>
+
+
+</body>
+
+</html>

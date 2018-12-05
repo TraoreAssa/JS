@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nombre de jours du </title>
+	<meta charset="UTF-8">
+
+
+</head>
+
+<body>
+	<h1>Nombre de jours du 1</h1>>
+
+	<p>Ecrivez un programmenombre_jours.jsqui fait saisir le numéro d'un mbre entre 1 et 12) puis affiche le nombre de jours de ce >
+	<p>On ne tiendra pas compte des années bissextiles.</p>
+	<p>Les erreurs de saisie doivent être gérées.</p>
+
+	<h3>Résultat :</h3>
+
+<script>
+
+var mois=Number(prompt("Entrer le numero du mois (chiffre)"));
+
+switch(mois){
+case 1 : case 3 : case 5 : case 7 : case 8 : case 10: case 12: j=31; break;
+case 4 : case 6 : case 9 : case 11 : j=30; break;
+case 2 : j=29; break;
+default:"Erreur"
+
+}
+alert("Le mois " + mois + " à " + j + " jours ");
+
+</script>
+
+</body>
+</html>

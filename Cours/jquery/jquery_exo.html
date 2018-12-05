@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <style>
+    .carre{
+        height: 10px;
+        width: 10px;
+        background: red;
+    }
+    </style> -->
+</head>
+<body>
+    <header>
+        <div class="carre"></div>
+		<button id="agrandir">Agrandir</button>
+		<button id="reset">Reset</button>
+        
+    </header>
+    <h1>Jquery</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque vitae numquam illum.</p>
+    <h2>Il était un fois, Jquery</h2>
+    <p class="maClass">Tempora odio animi harum at, molestias beatae eos! Necessitatibus similique expedita inventore, asperiores numquam voluptate error tempora omnis dolore maiores quia aspernatur.</p>
+    <p class="maClass1">Tempora odio animi harum at, molestias beatae eos! Necessitatibus similique expedita inventore, omnis dolore maiores quia aspernatur.</p>
+    <p class="maClass">Tempora odio animi harum at, molestias beatae eos! Necessitatibus similique expedita inventore, asperiores numquam voluptate error tempora omnis dolore maiores quia aspernatur.</p>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum dolorem quia dolore nam commodi nesciunt, repudiandae cum ad doloribus facere? Reprehenderit, aspernatur enim eaque hic beatae dolores obcaecati tempore neque.</div>
+    <section id="monId"></section>
+    <span>Mon histoire est bientôt terminé</span> <br>
+    <input type="checkbox" name="checkbox" >
+    <footer>
+        <p>C'est la fin </p>
+    </footer>
+    
+    
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+
+
+    /* Créer plusieur éléments HTML et récuperer leur valeur. par exemple <p> Il était un fois </p> 
+    récuperer le texte "il etait une fois". Je veux :
+    H1, H2, P, Div, Section, Span, Class, Id, Footer, Header, Checkbox.*/
+
+
+            $(function(){
+
+            // $("h1").html
+            // var monTitre = $('h1');
+            // console.log(monTitre[0].innerHTML);
+            // document.write(monTitre[0].innerHTML);
+
+            var texte = $('p:eq(1)');
+            console.log(texte);
+
+            // var maClass = $(".class");
+
+            // console.log($("input[type=checkbox]").val)//.val recupere la valeur
+
+            $("p:eq(1)").addClass("mes-paragraphes").css({
+                "color": "red",
+                "background": "yellow"
+                });// pour modifier le css de mon p qui ont la class mes-paragraphes
+
+                var monTitre = $("h1");
+                console.log(monTitre[0].innerHTML);
+
+                var monH2 = $('h2');
+                console.log(monH2[0].innerHTML);
+
+                var monP2 = $('p:eq(1)');
+                console.log(monP2[0].innerHTML);
+
+                // var monCheckbox = $('input[type=checkbox]');
+                // console.log($(monCheckbox[0]).val);
+
+                var monHeader = $("header");
+                console.log(monHeader[0].innerHTML);
+
+
+            
+            // ajouter un evenement
+            $('p').click(function(){
+                alert("J'ai cliqué !")
+            });
+
+
+            /*
+            Changer la couleur du texte et son arriere plan lorsque je passe sur le texte.
+            et lorsque je sors du texte je reviens sur l'effet d'origine.
+            */
+
+            $("h1").mouseover(function(){
+                $("h1").css({
+                    "color":"red",
+                    "background":"yellow",
+                    });
+                });
+                
+            $("h1").mouseout(function(){
+                $("h1").css({
+                    "color":"#000",
+                    "background":"none",
+                });
+            });
+
+
+            /*
+            Déclarer un carré taille 10x10 (donnez lui une couleur) et à chaque fois que je clique sur le boutton "agrandir" mon carré grandit de 10px ! 10x10... 20x20... 30x30 etc. ajouter également un boutton reset qui permet de revenir à la taille initiale
+            */
+            $(function(){
+                var hauteur = 10 , largeur = 10;
+
+                $(".carre").css({
+                        "background": "red",
+                        "width" : largeur+"px",
+                        "height": hauteur+"px",
+                        "border" : "1px solid black"
+                    });
+                
+                $("#agrandir").click(function(){
+                
+                    hauteur += 10;
+                    largeur += 10;
+
+                    $(".carre").css({
+                        "width" : largeur+"px",
+                        "height": hauteur+"px",
+                    });
+                });
+
+                $("#reset").click(function(){
+                    hauteur = 10; largeur=10;
+                    
+                    $(".carre").css({
+                        "width" : largeur+"px",
+                        "height": hauteur+"px"
+                    });
+                });
+                
+            });
+            
+
+
+
+        
+        
+        });
+    
+        </script>
+</body>
+</html>

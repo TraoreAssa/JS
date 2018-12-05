@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="7_comparaison.js">
+	<title>Comparaison de deux nombres</title>
+	<meta charset="UTF-8">
+
+</head>
+
+<body>
+	<h1>Comparaison de deux nombres</h1>
+	<p>Ecrivez un programmecomparaison.js qui fait saisir deux nombres puis compare leurs valeurs et affiche un message approprié (plus grand, plus petit, égal).</p>
+
+<script>
+var  nombre1 = Number(prompt("Entrer une valeur du 1er chiffre")),
+nombre2 = Number(prompt("Entrer une valeur du 2eme chiffre"));
+
+if(nombre1 < nombre2){
+	alert( nombre1 + " est plus petit que " + nombre2);
+}
+else if(nombre1 == nombre2){
+	alert(nombre1 + " est égal à " + nombre2);
+}
+else{
+	alert(nombre1 + " est superieur à " + nombre2);
+}
+
+</script>
+
+<script type="text/javascript" src="7_comparaison.js" ></script>
+</body>
+</html>

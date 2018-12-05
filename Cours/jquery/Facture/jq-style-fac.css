@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css?family=Anton|Passion+One|Sedgwick+Ave|Yanone+Kaffeesatz:300,400,700');
+
+.mini-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+footer button {
+    border: 0;
+    background: linear-gradient(to bottom, #89216Baa, #DA4453);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: 3px solid #DA4453;
+    font-weight: bolder;
+    display: block;
+    margin:auto;
+    transition: .4s;
+}
+
+footer button:hover {
+    box-shadow: 0 0 10px #aaa;
+    border: 3px solid #89216Baa;
+
+}
+
+body {
+    padding-top: 100px;
+    padding: 5%;
+    position: relative;
+}
+
+/* MESSAGE DE REMISE SUR 100EUR */
+body > p {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: green;
+    background: lightgreen;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    border-left: 10px solid green;
+    margin:0;
+    width: calc(100% - 30px);
+    display: none;
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+/* Button POUR MESSAGE DE REMISE SUR 100EUR */
+body > p:after {
+    content: "x";
+    color: rgba(54, 173, 54, .7);
+    border-radius: 50%;
+    font-size: 24px;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform:translateY(-50%);
+    cursor: pointer;
+}
+
+@keyframes fade {
+    from{transform: translate(-50%,-1000px);}
+    to {transform: translate(-50%,0);}
+}
+
+body, input, select {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+::placeholder {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+
+h1 {
+    color:#333;
+}
+
+h2 {
+    color: #444;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    background: url('../img/logo.png') no-repeat;
+    background-size: 100%;
+    width: 200px;
+    height: 200px;
+}
+
+input, select {
+    /* background: red; */
+    padding: 10px 0;
+    border:0;
+    border: 1px solid #ddd;
+    /* -webkit-appearance: none;
+    -moz-appearance: none; */
+    border-radius: 5px;
+    /* box-shadow: 0 0px 2px #000; */
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+input[type="number"] {
+    text-align: right;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: #555 !important;
+    font-weight: bold;
+}
+
+#infos * {
+    margin: 5px 0;
+}
+
+#infos input {
+    color: #fff;
+}
+
+#infos {
+    width: 25%;
+    background: linear-gradient(to bottom, #DA4453, #89216Bee);
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    border:1px solid #eee;
+    box-shadow: 0 0px 3px #555;
+}
+
+#infos > div:first-of-type > input {
+    width: 100%;
+}
+
+#infos > div:nth-of-type(2),
+#infos > div:last-of-type {
+    /* background: red; */
+    display: flex;
+    justify-content: space-between;
+}
+
+#infos > div:nth-of-type(2) > input {
+    /* background: red; */
+    width: calc(100% / 2);
+}
+
+#infos > div:last-of-type > select {
+    /* background: red; */
+    width: calc(100% / 4);
+}
+
+#infos input[type="text"] {
+    background: transparent;
+    border:none;
+    box-shadow: none;
+    border-bottom: 3px solid #eee;
+    border-radius: 0;
+}
+
+#infos ::placeholder {
+    opacity: 1;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* milieu de la page A --- Expedier A */
+
+section div {
+    width: 100%;
+    border-top: 5px solid #DA4453;
+    margin: 50px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 2px #555;
+    color: #DA4453;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+section div:last-of-type {
+    border-top: 5px solid #89216Baa;
+    color: #89216Baa;
+}
+
+section h3 {
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 20px 10px;
+    background: #eee;
+}
+
+section > div > input, section > div > select {
+    width: calc(100% / 7);
+}
+
+/* tableaux */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+table input, table select {
+    width: 100%;
+}
+
+section:last-of-type table td:first-of-type {
+    border:none;
+}
+
+section:last-of-type table {
+    width: 40%;
+    margin-left: auto;
+}
+
+section:last-of-type table td:last-of-type {
+    background: #efefef;
+    border:none;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Responsive */
+
+@media only screen and (max-width: 768px) {
+
+    body > p {
+        font-size: 20px;
+        text-align: justify;
+    }
+    body > p:after {
+        opacity: .8
+    }
+
+    header {
+        display: inline-block;
+        width: 100%;
+    }
+
+    #infos {
+        width: calc(100% - 42px);
+    }
+
+    section:first-of-type div select,
+    section:first-of-type div input
+    {
+        display: block;
+        width: calc(100% - 40px);
+        margin: 20px;
+    }
+
+    table, thead, tbody, th, td, tr { 
+        display: block; 
+        position: relative;
+        border:0;
+        color: #333;
+    }
+    
+    section:nth-of-type(2) tr:first-of-type td {
+        display: none;
+    }
+
+    section:nth-of-type(2) tr:nth-of-type(odd) td:nth-of-type(1) {
+        border-top: 5px solid #444;
+        border-radius: 5px 5px 0 0;
+        text-align: center;
+    }
+
+    section:nth-of-type(2) tr:nth-of-type(even) td:nth-of-type(1) {
+        border-top: 5px solid #aaa;
+        border-radius: 5px 5px 0 0;
+        text-align: center;
+    }
+
+    section:nth-of-type(2) tr:not(:first-of-type)  {
+        border: 1px solid #eee;
+        margin-top: 50px;
+        border-radius: 5px;
+    }
+	
+	section:nth-of-type(2) tr:not(:first-of-type) td:nth-of-type(1)::before {
+        content: "Code de produit:";
+        font-weight: bolder;
+        display: block;
+        width: calc(100% - 20px);
+        height: 50%;
+        left:0;
+        top: 0;
+        padding: 10px;
+        margin-bottom: 10px;
+        color: #444;
+    }
+	section:nth-of-type(2) tr:nth-of-type(even) td:nth-of-type(1)::before {
+        content: "Code de produit:";
+        font-weight: bolder;
+        display: block;
+        width: calc(100% - 20px);
+        height: 50%;
+        left:0;
+        top: 0;
+        padding: 10px;
+        margin-bottom: 10px;
+        color: #999;
+    }
+
+	section:nth-of-type(2) tr:not(:first-of-type) td:nth-of-type(2)::before {
+        content: "Libelle:";
+        font-weight: bolder;
+        padding: 10px;
+    }
+
+	section:nth-of-type(2) tr:not(:first-of-type) td:nth-of-type(3)::before {
+        content: "Prix:";
+        font-weight: bolder;
+        padding: 10px;
+    }
+
+	section:nth-of-type(2) tr:not(:first-of-type) td:nth-of-type(4)::before {
+        content: "Quantite:";
+        font-weight: bolder;
+        padding: 10px;
+    }
+
+	section:nth-of-type(2) tr:not(:first-of-type) td:nth-of-type(5)::before {
+        content: "Montant:";
+        font-weight: bolder;
+        padding: 10px;
+    }
+
+    section:nth-of-type(3) table {
+        margin:50px 0;
+        width: 100%;
+        background: #eee;
+        border-radius: 5px;
+        font-weight: bold;
+    } 
+
+    section:nth-of-type(3) table tr:last-of-type td {
+        background: #eee;
+        border-radius: 0 0 5px 5px;
+    } 
+}
+
+footer div {
+    border: 3px dashed #DA4453;
+    margin: 10px;
+    font-size: 18px;
+    text-align: center;
+    background: rgba(255, 239, 213, 0.2);
+    border-radius: 5px;
+}
+
+footer div strong {
+    text-decoration: underline green;
+}

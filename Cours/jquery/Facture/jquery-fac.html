@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projet Facture en Jquery</title>
+    <!-- Notre CSS -->
+    <!-- <link rel="stylesheet" href="jq-style.css"> -->
+</head>
+
+<body>
+
+    <header>
+        <!-- logo -->
+        <div id="logo">
+
+        </div>
+        <!-- Rensignements de la societe -->
+        <div id="infos">
+            <div>
+                <input type="text" placeholder="Nom de la societe">
+                <input type="text" placeholder="Adresse de la societe">
+                <input type="text" placeholder="Entrer un numero de téléphone">
+                <input type="text" placeholder="Entrer votre adresse email">
+            </div>
+            <div>
+                <label>N° DE FACTURE </label>
+                <input type="number" min="01" value="01">
+            </div>
+            <div>
+                <label>DATE</label>
+                <!-- jour -->
+                <select name="" id="jour">
+
+                </select>
+                <!-- mois -->
+                <select name="" id="mois">
+
+                </select>
+                <!-- année -->
+                <select name="" id="annee">
+
+                </select>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- titre -->
+    <div class="mini-header">
+        <h1>FACTURE</h1>
+    </div>
+
+    <section>
+        <!-- A -->
+        <div>
+            <h3>A</h3>
+            <select name="" id="">
+                <option>Nouveau client</option>
+                <option>LePoleS</option>
+                <option>Prosevia</option>
+                <option>Microsoft</option>
+                <option>Google</option>
+            </select>
+            <input type="text" id="a_nomSociete" placeholder="Nom de la Societe">
+            <input type="text" id="a_nom" placeholder="Nom">
+            <input type="text" id="a_rue" placeholder="Rue">
+            <input type="text" id="a_cp" placeholder="Code Postal, Ville">
+            <input type="text" id="a_tel" placeholder="Numéro de téléphone">
+        </div>
+
+        <!-- Expedier A: -->
+        <div>
+            <h3>EXPEDIER A</h3>
+            <select>
+                <option>Nouveau client</option>
+                <option>Mohamed Aarous</option>
+                <option>Assa Traore</option>
+                <option>Sonia Bougamha</option> -->
+                <option>Anas Yousfi</option>
+            </select>
+            <input type="text" id="e_nomSociete" placeholder="Nom de la Societe">
+            <input type="text" id="e_nom" placeholder="Nom">
+            <input type="text" id="e_rue" placeholder="Rue">
+            <input type="text" id="e_cp" placeholder="Code Postal, Ville">
+            <input type="text" id="e_tel" placeholder="Numéro de téléphone">
+
+        </div>
+    </section>
+
+    <!-- Produit -->
+    <section>
+        <h2>Détails des produits facturés</h2>
+        <table>
+            <tr>
+                <td>Code Produit</td>
+                <td>Libellé produit</td>
+                <td>Prix - Unitaire en euros</td>
+                <td>Quantité commandée</td>
+                <td>Montant en euros</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <select name="" id="">
+                    </select>
+                </td>
+                <td>
+                    Economie - Un site web - 100go de stockage
+                </td>
+                <td>
+                    2 €90 / mois
+                </td>
+                <td>
+                    <input type="number" min="0" value="1">
+                </td>
+                <td>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="" id="">
+
+                    </select>
+                </td>
+                <td>
+                    Economie - Un site web - 100go de stockage
+                </td>
+                <td>
+                    2 €90 / mois
+                </td>
+                <td>
+                    <input type="number" min="0" value="1">
+                </td>
+                <td>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="" id="">
+
+                    </select>
+                </td>
+                <td>
+                    Economie - Un site web - 100go de stockage
+                </td>
+                <td>
+                    2
+                </td>
+                <td>
+                    <input type="number" min="0" value="1">
+                </td>
+                <td>
+
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <table>
+            <tr>
+                <td>Sous-total</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>t.v.a 20.00%</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>Port & manutention</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Total du (Total ttc)</td>
+                <td></td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Message > 1000EUR  -->
+    <p id="promotion">
+    </p>
+
+    <!-- Chque dans le footer -->
+    <footer>
+        <div>
+            <p>Veuillez rédiger tous les chèques à l'ordre de
+                <strong>"Nom de la société"</strong> Pour toute question concernant cette facture, veuillez contacter :
+                <span>DUPONT</span> au
+                <strong>01.25.65.78.96</strong>
+                ou à l'adresse
+                <strong>"societe@supportclient.fr"</strong>
+            </p>
+            <h3>Nous vous remercions de votre confiance</h3>
+        </div>
+        <button>Imprimer cette page</button>
+
+    </footer>
+
+    <!-- Notre Script -->
+    <!-- <script src="../js/facture.js"></script> -->
+    <script src="../jquery-3.3.1.js"></script>
+    <script>
+
+        $(document).ready(function () {//ou $(function(){...}).
+            // alert("Bienvenue sur notre site !")
+
+
+            //Block Date (Jour Mois Année)
+            var date = new Date(),
+                j = date.getDate(),
+                m = date.getMonth() + 1,
+                a = date.getFullYear();
+
+            var jour = $('#jour');
+            console.log(jour);
+            jour[0].innerHTML += "<option>" + j + '</option>';
+            for (i = 1; i <= 31; i++) {
+                jour[0].innerHTML += "<option>" + i + '</option>';
+            }
+
+            var mois = $('#mois');
+            console.log(mois);
+            mois[0].innerHTML += "<option>" + m + '</option>';
+            for (i = 1; i <= 12; i++) {
+                mois[0].innerHTML += "<option>" + i + '</option>';
+            }
+
+            var annee = $('#annee');
+            console.log(annee);
+            annee[0].innerHTML += "<option>" + a + '</option>';
+            for (i = a + 1; i <= a + 50; i++) {
+                annee[0].innerHTML += "<option>" + i + '</option>';
+            }
+
+            /************************** Réussie *******************************/
+
+
+            var anomSociete = $("#a_nomSociete");
+            var anom = $("#a_nom");
+            var arue = $("#a_rue");
+            var acp = $("#a_cp");
+            var atel = $("#a_tel");
+
+            var enomSociete = $("#e_nomSociete");
+            var eNom = $("#e_nom");
+            var eRue = $("#e_rue");
+            var eCp = $("#e_cp");
+            var etel = $("#e_tel");
+
+            var select = $('select');
+            console.log(select);
+
+            var option = $('option');
+            console.log(option);
+
+
+
+            var input = $("input");
+            console.log(input);
+
+            var td = $("td");
+            console.log(td);
+
+            var montantArticle = $("td[19]");{
+               td[17].value *input[17].value;
+               td[17].value *input[17].value;
+               td[17].value *input[17].value;
+
+            });
+
+
+            var promotion = $("#promotion");
+            console.log(promotion);
+
+            var span = $('footer strong');
+            console.log(span);
+
+
+
+            // td[9].innerHTML = td[8] * td[7]; 
+
+
+
+
+            // var td = $('td');
+            // console.log(td[1]);
+            //
+
+
+
+            // option[96].innerHTML = "Nouveau Client";
+            // option[97].innerHTML = "LePoleS";
+            // option[98].innerHTML = "Prosevia";
+            // option[99].innerHTML = "Microsoft";
+            // option[100].innerHTML = "Google";
+
+            // option[101].innerHTML = "Nouveau client";
+            // option[102].innerHTML = "Mohamed Aarous";
+            // option[103].innerHTML = "Assa Traore";
+            // option[104].innerHTML = "Sonia Bougamha";
+            // option[105].innerHTML = "Anas Yousfi";
+
+
+            //    td[5].innerHTML; 
+
+            function CalculHT() {
+                var prixHT = Number(td[9].innerText) + Number(td[14].innerText) + Number(td[19].innerText);
+                td[21].innerHTML = prixHT.toFixed(2);
+                return prixHT;
+            }
+
+            // calculer la tva
+            function TVA() {
+                var prixTVA = CalculHT() * 20 / 100;
+                td[23].innerHTML = prixTVA.toFixed(2);
+                return prixTVA;
+            }
+
+            // frais de port
+            function fraisPort() {
+                var port = 10;
+                td[25].innerHTML = port + "€";
+                return port;
+            }
+
+            // Montant TTC
+            function montantTTC() {
+                var prixTTC = CalculHT() + TVA() + fraisPort();
+                prixTTC.toFixed(2);
+                var prixPromo = prixTTC * 5 / 100;
+                if (prixTTC >= 1000) {
+                    message.innerHTML = "N.B Votre facture a depassé 1000€, vous avez obtenu pour votre prochaine facture une remise de : " + prixPromo.toFixed(2) + " € répresentant <span>5</span>% de votre commande ci-dessus";
+                    message.style.display = "block";
+                }
+
+                else {
+                    message.style.display = "none";
+
+                }
+                td[27].innerHTML = prixTTC.toFixed(2) + "€";
+                console.log(montantTTC);
+            }
+            // Calculer le montant de l'article selon la quantite
+            function CalculArticle(p, q, i) {
+                var input = quantite[q].value;
+                montant = p * input;
+                // td pour montant en euro pour chaque ligne
+                td[i].innerHTML = montant.toFixed(2);
+                console.log(td[i]);
+
+                // Appeler directement les autres functions pour eviter la repitition
+                CalculHT();
+                TVA();
+                fraisPort();
+                montantTTC();
+            }
+
+            var button = $("button");
+
+
+            // // Remplissage un pour A - et Expedier A:
+            // function remplissage(element, affecter, affecter2, affecter3, affecter4, affecter5, index, comparateur, valeur, valeur2, valeur3, valeur4, valeur5) {
+            //     if (element[index].value == comparateur) {
+            //         // remlir le texte de chaque option
+            //         affecter.value = valeur;
+            //         affecter2.value = valeur2;
+            //         affecter3.value = valeur3;
+            //         affecter4.value = valeur4;
+            //         affecter5.value = valeur5;
+            //         affecter.disabled = true;
+            //         affecter2.disabled = true;
+            //         affecter3.disabled = true;
+            //         affecter4.disabled = true;
+            //         affecter5.disabled = true;
+            //     }
+            //     else if (element[index].value == "Nouveau client") {
+            //         // remlir le texte de chaque option
+            //         affecter.disabled = false;
+            //         affecter2.disabled = false;
+            //         affecter3.disabled = false;
+            //         affecter4.disabled = false;
+            //         affecter5.disabled = false;
+            //     }
+            // }
+            // // Renseignements clients pré
+            // select[3].onclick = function () {
+            //     remplissage(select, aNomSociete, aNom, aRue, aCp, atel, 3, "Nouveau client", "", "", "", "", "");
+            //     remplissage(select, aNomSociete, aNom, aRue, aCp, atel, 3, "LePoleS", "Le Pole S", "Mohamed", "55 rue de Poissy", "78300, Poissy", " 01.02.03.04.05");
+            //     remplissage(select, aNomSociete, aNom, aRue, aCp, atel, 3, "Prosevia", "PROSEVIA", "Marc", "80 Avenue de Paris", "75020, Paris", " 01.78.83.04.70");
+            //     remplissage(select, aNomSociete, aNom, aRue, aCp, atel, 3, "Microsoft", "MICROSOFT", "Moussa", "9 place de Londres", "95550, Cergy", " 01.51.83.96.74");
+            //     remplissage(select, aNomSociete, aNom, aRue, aCp, atel, 3, "Google", "GOOGLE", "Pierre", "159 BD de la Paix", "77520, Meaux", " 09.58.63.73.92");
+            // };
+        });
+    </script>
+</body>
+
+</html>

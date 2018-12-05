@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="6_joursuivant.js">
+	<title>Jour Suivant</title>
+	<meta charset="UTF-8">
+
+</head>
+
+<body>
+	<h1>Jour Suivant</h1>
+		<p>Ecrivez un programme jour_suivant.js qui fait saisir un nom de jour de la semaine à l'utilisateur, puis affiche le nom du jour suivant.</p>
+		<p>Les erreurs de saisie (jour incorrect) doivent être gérées.</p>
+		<p>Effectuez l'exercice avec des if/if else puis avec un switch.</p>
+
+		<script>
+			var demain =prompt("Indiquez le jour de la semaine"), 
+			JourFr="";
+		/* if(demain == "lundi" || demain == "mardi"|| demain == "mercredi" || demain == "jeudi" || demain == "vendredi" || demain == "samedi" || demain == "dimanche")
+		OU 
+		if(demain == "lundi"){
+	alert("demain on sera Mardi")}
+		if(demain == "Mardi"){
+	alert("demain on sera mercredi")}
+		if(demain == "mercredi"){
+	alert("demain on sera jeudi")}
+		if(demain == "jeudi"){
+	alert("demain on sera vendredi")}
+		if(demain == "vendredi"){
+	alert("demain on sera samedi")}
+		if(demain == "samedi"){
+	alert("demain on sera dimanche")}
+	if(demain == "dimanche"){
+	alert("demain on sera lundi")}*/
+	
+		switch(demain){
+			case "Dimanche": JourFr=" Lundi " ; break;  
+			case "Lundi": JourFr=" Mardi " ; break; 
+			case "Mardi": JourFr=" Mercredi " ; break; 
+			case "Mercredi": JourFr=" Jeudi " ; break; 
+			case "Jeudi": JourFr=" Vendredi " ; break; 
+			case "Vendredi": JourFr=" Samedi " ; break; 
+			case "Samedi": JourFr=" Dimanche " ; break; 
+			default: JourFr=" Erreur " ; break; 
+		}
+
+		alert("Demain on sera" + JourFr);
+		
+		</script>
+
+</body>
+</html>

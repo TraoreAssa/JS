@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript</title>
+    <script src="script.js"></script>
+
+
+    <script>alert("Hello Word");
+    alert("Je suis dans le body")
+    //Toujours finir l'iscruction par un point virgule(;)
+   /*Commentaire sur plusieurs lignes*/
+   
+//On déclare une varible sans valeur et on lui en affecte une valeur
+
+var nomDeLaVariable;
+var nomDeLaVariable="Assa";//Type String
+nomDeLaVariable='L\'école';
+nomDeLaVariable="J'habite dans le \93";
+console.log(nomDeLaVariable);
+
+//On déclare une variable et lui affecte directement une valeur
+var X=25;
+var x="Toto";
+//console.log(X);
+//console.log(x);
+
+//On déclare plusieurs valiables en même temps
+var a="azerty", b=true, c=10.5;
+//console.log(a+''+b+''+c);
+
+//On déclare une variable vide et on lui affecte une valeur
+var z='';
+z="Qwerty";
+//console.log(z);
+
+
+//var t=null;
+//var u=NaN;
+//var undefined;
+//var tabs=[];
+
+//console.log(typeof(z));//Verifie le type de la variable
+
+var x=5,y=10,z=-2;
+
+    //Addition
+x=x+1;
+x+=2;
+    
+    //Soustraction
+x=x-2;
+x-=2;
+
+   //Multiplication
+y=y*2;
+y*=2;
+var Multiplication=x*y;
+//console.log(Multiplication);
+
+    //Division
+var Division=y/z;
+y/=z
+//console.log(Division);
+
+   // Modulo 
+   //le Modulo est le reste de la divition
+    var Modulo=13%3;
+    //13%=3;
+    //Dans cette opperation: 13 par 3 = 4-3 = 1; le Modulo est de 1. Il s'agit  du reste de la division entière d'un nombre par un autre.
+   
+
+    var priority= x + y / (4+z) % 3;
+    //console.log(priority);
+    //console.log(a+''+b+''+c)
+
+    var prenom="Assa",
+    espace= '',
+    age= 24;
+    var moi= prenom+espace+age;
+    //alert(moi)
+
+
+/*
+    == est égal à -> 10 - "10";
+    != est différent de -> 12!="2";
+    === est égal à(en valeur et en type) -> 10 -10;
+    !== est différent de (en valeur et en type) 10 !== 9;
+    < strictement inferieur 
+    > strictement supérieur
+    <= est inférieur ou égal
+    >= est supérieur ou égal
+
+    
+    Exo: Effectuer une caparison des variables x et y ou x = 4 et y ="4" pour chaque comparateur,
+    renvoyé les tous dans un alert().*/
+
+var x=4,
+y="4",
+vrai= x<y, 
+vrai2= x>y,
+faux= x>=y,
+faux2= x<=y,
+egal= x==y,
+egalValType= x===y,
+diff=x!=y,
+diffValType= x!==y;
+alert(vrai + "\n"+faux+"\n"+ vrai2+"\n"+ faux2+"\n"+egal+"\n"+egalValType+"\n"+diff+"\n"+diffValType)
+//\n= retour a la ligne
+
+
+var heure=12.33;
+//Si
+/*
+if(heure<15){
+    if(typeof(heure)=="number")
+    alert("Il est midi");
+    //code à executer si la condition est verifier
+    
+}//Sinon si
+
+ else if(Heure =="12.33"&& heure ===12.33){
+    //code à executer si l'autre condition est verifier
+    alert("je suis dans la deuxième condition");
+}
+
+ else if(Heure =="12.33"|| heure ===12.33){
+    //code à executer si l'autre condition est verifier
+    alert("je suis dans la deuxième condition");
+} //Sinon  
+
+//on peut utiliser un seul else!
+else{
+    //code à executer si aucune condition n'est verifier
+}
+
+/*Exo: Créé une condition qui si var x est un nombre, qu'il est inferieur ou égal à 10,
+qu'il est du même type que y alors on fait une alert qui renvoi un message quelconque*/
+
+//Mon exo
+var x=5, y=8;
+if(x<=10 && x===y){
+    if(typeof(x)=="number");
+    alert("Message")
+}
+
+
+/*
+&& - opération AND(et)
+|| - opération OR (ou)
+ ! - opération NOT(non)
+*/
+
+ /*Exo: Créé une variable heure comme suit:var heure = Number(prompt ("Entrez une valeur comprise entre 0 et 24.");
+ Créé une condition qui si heure se situe entre 0 et 12 revoi une alerte "C'est le matin", 
+ si elle se situe entre 12 et 17 "C'est l'après-midi",
+ entre 17 et 24 "C'est le soir".)*/
+
+var heure = Number(prompt ("Entrez une valeur comprise entre 0 et  24."));
+
+if(heure>=0 && heure<= 12==true){ 
+    alert("C'est le matin");
+}
+else if(heure>=12 && heure<=17){
+    alert("C'est l'après-midi");
+}
+else if(heure>=17 && heure<=24){ 
+    alert("C'est le soir");
+}
+else{
+    alert("La valeur entrer n'est pas valide.");
+}
+
+//Switch c'est semblable à une condition à la différence que celui-ci ne peut testé que l'egalité des valeurs.
+
+var heure = Number(prompt ("Entrez une valeur comprise entre 0 et 24."));
+
+switch(heure){
+//test seulement les inégalités
+    case 8:
+    alert("Il est 8H")
+    break;
+    case 9:
+    alert("Il est 9H")
+    break;
+    case 10:
+    alert("Il est 10H")
+    break;
+    case 11:
+    alert("Il est 11H")
+    break;
+    case 12:
+    alert("Il est 12H")
+    break;
+    default:
+    alert("Error!!!")
+
+}
+/*Exercice: Créez 2 variables nom_etudiant et prenom_etudiant auxquelles vous affecterez respectivement votre nom et prénom. Vous afficherez dans une fonction alert() le message suivant : "Bonjour, je m'appelle prenom_etudiant nom_etudiant".*/
+
+var prenom_etudiant="Assa",
+nom_etudiant="TRAORE";
+alert("Bonjour, je m'appelle " + nom_etudiant + ' ' + prenom_etudiant);
+
+
+/*Exercice: Exercice quasi identique au précédent, mais vous n'affectez pas les nom et prénom dans la source, mais en questionnant l'utilisateur pour connaitre son nom et son prénom.*/
+
+var nom_etudiant =prompt("Entrez votre Nom");
+var prenom_etudiant=prompt("Entrez votre Prénom");
+
+
+
+/*Exercice: Créez 2 variables nombre1 et nombre2 auxquelles vous affecterez respectivement des valeurs numériques. Vous en calculerez la somme dont vous affecterez la variable somme et vous afficherez dans une fonction alert() le message suivant : "La somme de nombre1 et de nombre2 est resultat".*/
+var nombre1= 10,
+nombre2=20,
+resultat=nombre1+nombre2;
+alert("La somme de "+ nombre1+ ' + ' + nombre2 + " est "+ resultat);
+
+/*Exercice: Exercice quasi identique au précédent, mais vous n'affectez pas nombre1 et nombre2 dans la source, mais en questionnant l'utilisateur pour connaitre les deux valeurs numériques nombre1 et nombre2.*/
+var nombre1 = Number(prompt("Entrez la valeur de nombre 1?"));
+var nombre2 = Number(prompt("Entrez la valeur de nombre 2?")),
+resultat = nombre1 + nombre2;
+alert(resultat)
+
+
+
+/*Exercice quasi identique au précédent, mais sans affecter nombre1 et nombre2 dans la source, mais en questionnant l'utilisateur pour connaitre les deux valeurs numériques nombre1 et nombre2, vous effectuerez les 4 opérations et donnerez 4 messages pour les résultats (addition, soustraction, multiplication et division).*/
+var addition = nombre1 + nombre2;
+var difference = nombre1 - nombre2;
+var produit = nombre1 * nombre2;
+var quotient = nombre1 / nombre2;
+
+alert("\nl'addition de " + " " + nombre1 + " et de " + nombre2 + ' ' + "est" + ' ' + resultat);
+alert("\nLa difference" + " " + nombre1 + " et de " + nombre2 + ' ' +  "est" + ' ' + difference);
+alert("\nle produit" + " " + nombre1 + " et de " + nombre2 + ' ' +  "est" + ' ' + produit);
+alert("\nle quotient" + " " + nombre1 + " et de " + nombre2 + ' ' +  "est" + ' ' + quotient);
+
+/*Exercice: Ecrire le code d'un fichier HTML qui permet de saisir trois notes (DC1, DC2, DS) puis calcule et affiche la moyenne.*/
+nombre1=Number(prompt("Donner la note du nombre1")),
+nombre2=Number(prompt("Donner la note du nombre2")),
+nombre3=Number(prompt("Donner la note du nombre3")),
+moyenne=(nombre1 + nombre2 + nombre3)/3;
+alert(moyenne);
+
+/*Exercice: Ecrire le code d'un fichier HTML qui permet de saisir le numéro du mois et l’année  puis affiche le nombre de jours.*/
+var mois=Number(prompt("Entrez le numero du mois")),
+année=Number(prompt("Entrez le numero de l’année"));
+switch(mois)
+{
+case 1 : case 3 : case 5 : case 7 : case 8 : case 10: case 12: j=31; break;
+case 4 : case 6 : case 9 : case 11 : j=30; break;
+case 2 : if (Annee%4==0){ j=29;}
+else{ j=28;}
+break;
+}
+alert("Le mois " + mois + " à " + j + " jours ");
+
+/*Exercice: Ecrire le code d'un fichier HTML permettant d’afficher la table de multiplication d'un entier compris entre 1 et 10.*/ 
+var nombre=Number(prompt("Saisir un entier"));
+for(i=0;i<=9;i++)
+write("<br>"+n+"*"+i+"="+n*i);
+
+
+
+
+
+
+
+
+
+
+
+   </script> 
+</head>
+<body>
+  
+</body>
+</html>

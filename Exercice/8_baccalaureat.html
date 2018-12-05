@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="8_baccalaureat.js">
+	<title>Baccalauréat</title>
+	<meta charset="UTF-8">
+
+</head>
+
+<body>
+	<h1>Baccalauréat</h1>
+		<p>Ecrivez un programme baccalaureat.js qui fait saisir la moyenne d'un candidat puis affiche si ce candidat est :   </p>
+		<ul>
+			<li>recalé (moyenne inférieure à 10),</li>
+			<li>reçu (moyenne entre 10 et 12)</li>
+			<li>ou reçu avec mention (moyenne supérieure ou égale à 12).</li>
+		</ul>
+
+	<h3>Résultat :</h3>
+
+<script>
+	
+	var moyenne = Number(prompt("Entrer votre moyenne"));
+	
+if(moyenne < 10){
+	alert("Eleve RECALE!!");
+}
+else if(moyenne >= 10 && moyenne < 12){
+	alert("Eleve RECU")
+}
+else{
+	alert("RECU AVEC MENTION")
+}
+
+</script>
+
+
+<script type="text/javascript" src="8_baccalaureat.js" ></script>
+</body>
+</html>

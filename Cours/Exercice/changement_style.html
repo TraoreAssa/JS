@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercice</title>
+</head>
+<body>
+    
+    
+        <!-- liste select par HTML -->
+     <!-- <select name="premon" id="prenom">
+            <option value="Prenom">Assa</option>
+            <option value="Prenom">Ass</option>
+            <option value="Prenom">As</option>
+            <option value="Prenom">A</option>
+        </select> -->
+
+        <!-- Pour l'Exo 3: creation du bouton -->
+        <form>
+            <input type="text" id="color" placeholder="saisir un code couleur" maxlength="6">
+                                                                            <!-- max de caractere -->
+            <input type="submit" id="buttonColor" value="changer couleur fond">
+        </form>
+
+
+    <script>
+            //Exercice 1:
+        // /* Definir un tableau de prénom (5min)
+        // et remplir un select option avec les prénoms */
+
+        var premon = ["Albert", "Mohamed","Elodie","Moussa","Claire"];
+    document.write("<select>");
+        for(var i = 0; i <premon.length; i++){
+            document.write("<option>" + premon[i] + "</option>")
+        }
+    document.write("</select> <br>");
+
+        
+
+
+        //Exercice 2:
+        /* Demander a l'utilisateur si c'est un Homme ou une Femme
+            Ensuite lui demander son Prénom. 
+            Afficher le prénom de l'utilisateur de couleur rose, si c'est une Femme,
+            ou bleu si cest un homme
+        
+        */
+
+       var sexe =  prompt("sexe ?");
+            var prenom = prompt("prenom ?");
+            var p = document.write("<p></p>"); //declarer que la saisie de mes prompt sera des P
+            var text = document.querySelector("p");
+
+            if(sexe == "homme")
+            {
+                text.innerHTML = prenom;
+                text.setAttribute("style", "color:blue");
+
+            }
+
+            if(sexe == "femme")
+            {
+                text.innerHTML = prenom;
+                text.setAttribute("style", "color:pink"); //changer la couleur de l'ecriture
+            }
+
+        /* Exercice 3:
+            Changer la couleur du Body en idiquant la couleur
+        */
+
+         var form = document.querySelector('form');
+            var fond = document.querySelector("#color");
+
+            form.addEventListener('submit', function(){
+            
+                document.querySelector("body").setAttribute("style", "background:#"+fond.value+";");
+            });
+
+
+          
+
+    </script>
+
+    <!-- stop le comportement de de la balise (arreter le rechargement de la page pour chercher l'info) preventDefault
+    
+    fond.value = valeur de l'input-->
+</body>
+</html>

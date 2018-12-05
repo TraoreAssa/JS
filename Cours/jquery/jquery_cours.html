@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery JS</title>
+</head>
+<body>
+
+    <h1>Un Titre</h1>
+    <p> Texte numéro 1 </p>
+    <!-- <p> Texte numéro 2 </p> -->
+    <span class="rouge">Un span</span>
+    <span class="bleu">Un span</span>
+    <span class="rouge">Un span</span>
+    <div id="monId">Une div</div>
+    <input type="text" name="nom">
+
+
+
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        //Si l'alert ne s'ouvre pas cest que Jquery n'est pas charger
+        $(document).ready(function(){//ou $(function(){...}).
+        // avec ou sans le document entre (). 
+            //quand le doc est prêt . fait quelque chose!
+            alert("Chargement terminé ! ")
+        });
+    
+        $(function(){
+            var monTitre = $('h1');
+            console.log(monTitre);
+            // document.write(monTitre[0].innerHTML);
+        
+
+            // $('h1');
+            // $('p');
+            // $('p:ed(1)');
+            // $('#monID');
+            // $('div[monId');
+            // $('.bleu');
+            // $('span:not(.rouge');
+            // $('input[name=nom');
+            // $('input[type=text]');
+
+
+            // ajouter un evenement
+            $('p').click(function(){
+                alert("J'ai cliqué !")
+            });
+        })
+
+
+    </script>
+</body>
+</html>

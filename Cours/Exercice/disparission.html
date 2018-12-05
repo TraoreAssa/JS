@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Melange du HTML / CSS / JS</title>
+    <!-- <link rel="stylesheet" href="css/exo1.css"> -->
+
+    <style type="text/css">
+		.titre-principale{
+			color: #fff;
+			background: #000;
+			font-style: italic;
+			text-align: center;
+		}
+
+		.titre-principale-new{
+			color: #fff;
+			background: red;
+			font-style: normal;
+			text-align: center;
+		}
+
+		.presentation{
+			border: 1px solid black;
+			padding: 10px;
+			text-align: justify;
+		}
+
+	</style>
+</head>
+<body>
+    <h1 class="titre-principale">Apparission Paragraphe</h1>
+    <p class="presentation">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <button id="disable">Disparission</button>
+    
+    <!-- <h1>Apparission Paragraphe</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius minus quibusdam vero? Expedita excepturi cupiditate exercitationem alias quasi quibusdam voluptatem incidunt totam quia praesentium, tenetur dignissimos veniam molestiae at maiores? Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quae autem accusamus distinctio dolore adipisci nesciunt quo, quasi et sunt beatae, est quaerat dolorum asperiores sed sapiente cumque at molestias?Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non nobis laborum commodi unde eligendi sequi nulla soluta. Nemo non, nesciunt saepe dicta consectetur earum placeat amet reprehenderit quo minus? Nisi.</p>
+    <button id="disparait">Disparission</button>
+     -->
+    <script>
+      /* Exercice 4:
+            HTML : Creer 1 titre (Apparission Paragraphe) avec un paragraphe et un boutton
+            Css : Donner un style (couleur, et taille) a vos éléments,
+            JS: lorsque je clique sur le boutton, mon paragraphe disparait et un nouveau style que j'aurais au préalable défini dans mon CSS est appliqué a mon titre. Le titre change lui aussi et affiche Disparission paragraphe.
+            */
+
+            // var button = document.querySelector("#disparait");
+            // var monP = document.querySelector("p");
+        
+            // disparait.onclick = function(){
+            //     document.querySelector('p').innerHTML = " ";
+            //     document.querySelector('h1').innerHTML = " Disparission Paragraphe ";
+
+            // }
+
+            var magie = document.querySelector("#disable");
+			var text = document.querySelector(".presentation");
+			var titre = document.querySelector(".titre-principale");
+
+			magie.addEventListener("click", function(){
+				text.style.display = "none";
+				titre.className = "titre-principale-new";
+				titre.innerHTML = "Disparission paragraphe";
+			})
+            
+
+
+            
+        
+        
+    
+    </script>
+</body>
+</html>
