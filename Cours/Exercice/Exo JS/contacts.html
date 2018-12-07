@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gestion de mes contacts</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <!-- CDN de bootstrap-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Gestion de mes Contacts</h1>
+
+        <section class="row">
+
+            <form class="col-4">
+                <h3>Ajouter un contact</h3>
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Nom</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control form-control-sm" placeholder="Nom">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Prénom</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control form-control-sm" placeholder="Prénom">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Email</label>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control form-control-sm" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Tél</label>
+                    <div class="col-sm-6">
+                        <input type="text" maxlength="10" class="form-control form-control-sm" placeholder="Téléphone">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary my-1">Ajouter le Contact</button>
+
+            </form>
+
+            <table class="table table-striped col">
+                <thead>
+                    <p class="newContact"></p>
+                    <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prénom</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Téléphone</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
+    <!-- <script src="js/contact.js"></script> -->
+
+    <script src="jquerybibliotheque.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            var td = $('td');
+            var input = $('input');
+            $('button').click(function (e) {
+                td[0].innerHTML = input[0].value;
+                td[1].innerHTML = input[1].value;
+                td[2].innerHTML = input[2].value;
+                td[3].innerHTML = input[3].value;
+                e.preventDefault();
+                alert('Vous avez ajouter un contact !');
+            });
+        });
+
+    </script>
+</body>
+
+</html>
